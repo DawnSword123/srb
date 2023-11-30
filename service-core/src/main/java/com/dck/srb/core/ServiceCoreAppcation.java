@@ -2,6 +2,7 @@ package com.dck.srb.core;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
 *
@@ -10,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 *
 */
 @SpringBootApplication
+@ComponentScan({"com.dck.srb", "com.dck.common"})
 public class ServiceCoreAppcation {
     public static void main(String[] args) {
         SpringApplication.run(ServiceCoreAppcation.class);
