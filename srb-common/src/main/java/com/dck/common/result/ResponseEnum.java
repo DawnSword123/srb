@@ -16,6 +16,7 @@ public enum  ResponseEnum {
     ERROR(-1, "服务器内部错误"),
     BAD_SQL_GRAMMAR_ERROR(504,"sql语法异常"),
     BORROW_AMOUNT_NULL_ERROR(201,"借用金额为空"),
+    SERVLET_ERROR(102,"servlet请求异常"),
     ;
 
     // 响应状态码
