@@ -1,2 +1,4 @@
 # Project exclude paths
 /service-core/target/
+
+/service-core/src/main/resources/Application.yaml

@@ -1,4 +1,4 @@
-package com.dck.srb.core.controller;
+package com.dck.srb.core.controller.admin;
 
 import com.dck.common.exception.Assert;
 import com.dck.common.result.ResponseEnum;
@@ -10,22 +10,22 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.List;
 
 /**
  * @author Dawn.yang
  * @date 2023/11/29 16:43
  */
-@CrossOrigin
 @RestController
 @RequestMapping("/admin/core/integralGrade")
+@CrossOrigin(methods = {RequestMethod.OPTIONS,RequestMethod.DELETE,RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT})
 public class AdminIntegralGradeController {
     @Resource
     private IntegralGradeService integralGradeService;
 
+    @ApiOperation("获取列表")
     @GetMapping("/list")
-    public List<IntegralGrade> listAll() {
-        return integralGradeService.list();
+    public Result listAll() {
+        return Result.ok().data("list",integralGradeService.list()).message("获取列表成功");
     }
 
     @ApiOperation("新增积分等级")
