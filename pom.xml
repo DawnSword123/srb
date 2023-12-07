@@ -12,6 +12,7 @@
         <module>service-base</module>
         <module>service-core</module>
         <module>service-sms</module>
+        <module>aliyun-oss</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -198,6 +199,8 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+
 
 
 </project>
