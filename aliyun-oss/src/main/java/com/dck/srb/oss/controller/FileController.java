@@ -44,7 +44,7 @@ public class FileController {
             InputStream inputStream = file.getInputStream();
             String originalFilename = file.getOriginalFilename();
             String uploadUrl = fileService.upload(inputStream, module, originalFilename);
-
+            log.info("文件上传成功,文件链接: {}",uploadUrl);
             //返回r对象
             return Result.ok().message("文件上传成功").data("url", uploadUrl);
         } catch (IOException e) {
@@ -58,6 +58,7 @@ public class FileController {
             @ApiParam(value = "要删除的文件路径", required = true)
             @RequestParam("url") String url) {
         fileService.removeFile(url);
+        log.info("文件链接: {},已删除",url);
         return Result.ok().message("删除成功");
     }
 }
