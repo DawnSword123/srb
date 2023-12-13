@@ -5,6 +5,7 @@ import com.dck.common.result.ResponseEnum;
 import com.dck.common.result.Result;
 import com.dck.common.util.RandomUtils;
 import com.dck.common.util.RegexValidateUtils;
+import com.dck.srb.sms.client.CoreUserInfoClient;
 import com.dck.srb.sms.service.SmsService;
 import com.dck.srb.sms.util.SmsProperties;
 import io.swagger.annotations.Api;
@@ -35,6 +36,9 @@ public class ApiSmsController {
     private SmsService smsService;
 
     @Resource
+    private CoreUserInfoClient coreUserInfoClient;
+
+    @Resource
     private RedisTemplate redisTemplate;
 
     @ApiOperation("获取验证码")
@@ -47,6 +51,11 @@ public class ApiSmsController {
         Assert.notEmpty(mobile, ResponseEnum.MOBILE_NULL_ERROR);
         //MOBILE_ERROR(-203, "手机号不正确"),
         Assert.isTrue(RegexValidateUtils.checkCellphone(mobile), ResponseEnum.MOBILE_ERROR);
+
+        //手机号是否注册
+        boolean result = coreUserInfoClient.checkMobile(mobile);
+        log.info("查询手机号是否已注册,{}",result);
+        Assert.isTrue(result == false, ResponseEnum.MOBILE_EXIST_ERROR);
 
         //生成验证码
         String code = RandomUtils.getFourBitRandom();

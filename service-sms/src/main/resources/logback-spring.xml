@@ -68,7 +68,7 @@
     <!-- 日志记录器  -->
     <!-- 开发环境和测试环境 -->
     <springProfile name="dev,test">
-        <logger name="com.dck" level="ALL">
+        <logger name="com.dck" level="DEBUG">
             <appender-ref ref="CONSOLE" />
             <appender-ref ref="FILE" />
         </logger>
@@ -76,7 +76,7 @@
 
     <!-- 生产环境 -->
     <springProfile name="prod">
-        <logger name="com.dck" level="ERROR">
+        <logger name="com.dck" level="DEBUG">
             <appender-ref ref="CONSOLE" />
             <appender-ref ref="FILE" />
         </logger>
