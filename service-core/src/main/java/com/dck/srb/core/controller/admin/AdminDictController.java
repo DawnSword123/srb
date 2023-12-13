@@ -7,6 +7,7 @@ import com.dck.common.result.Result;
 import com.dck.srb.core.pojo.dto.ExcelDictDTO;
 import com.dck.srb.core.pojo.entity.Dict;
 import com.dck.srb.core.service.DictService;
+import com.dck.srb.core.service.UserInfoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -34,6 +35,8 @@ public class AdminDictController {
     @Resource
     private DictService dictService;
 
+    @Resource
+    private UserInfoService userInfoService;
 
     @ApiOperation("Excel批量导入数据字典")
     @PostMapping("/import")
@@ -79,4 +82,5 @@ public class AdminDictController {
         List<Dict> dictList = dictService.listByParentId(parentId);
         return Result.ok().data("list", dictList);
     }
+
 }

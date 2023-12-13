@@ -12,6 +12,10 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:mysql://121.43.34.120:3306/srb_core?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
     driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # nacos服务地址
 
   redis:
     host: 121.43.34.120
