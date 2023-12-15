@@ -30,7 +30,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/admin/core/dict")
 @Slf4j
-@CrossOrigin(methods = {RequestMethod.OPTIONS,RequestMethod.DELETE,RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT})
+//@CrossOrigin(methods = {RequestMethod.OPTIONS,RequestMethod.DELETE,RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT})
 public class AdminDictController {
     @Resource
     private DictService dictService;

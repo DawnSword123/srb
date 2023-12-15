@@ -20,7 +20,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/admin/core/userLoginRecord")
 @Slf4j
-@CrossOrigin(methods = {RequestMethod.OPTIONS,RequestMethod.DELETE,RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT})
+//@CrossOrigin(methods = {RequestMethod.OPTIONS,RequestMethod.DELETE,RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT})
 public class AdminUserLoginRecordController {
 
     @Resource

@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 @Api("会员积分")
 @RestController
 @RequestMapping("/admin/core/integralGrade")
-@CrossOrigin(methods = {RequestMethod.OPTIONS,RequestMethod.DELETE,RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT})
+//@CrossOrigin(methods = {RequestMethod.OPTIONS,RequestMethod.DELETE,RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT})
 public class AdminIntegralGradeController {
     @Resource
     private IntegralGradeService integralGradeService;

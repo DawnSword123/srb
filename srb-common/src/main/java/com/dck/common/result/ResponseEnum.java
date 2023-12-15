@@ -32,6 +32,7 @@ public enum  ResponseEnum {
     LOGIN_PASSWORD_ERROR(-209, "密码不正确"),
     LOGIN_DISABLED_ERROR(-210, "用户已被禁用"),
     LOGIN_AUTH_ERROR(-211, "未登录"),
+    USER_BIND_IDCARD_EXIST_ERROR(-301, "身份证号码已绑定"),
     ;
 
     // 响应状态码

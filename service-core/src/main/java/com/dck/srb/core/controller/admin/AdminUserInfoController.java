@@ -22,7 +22,7 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("/admin/core/userInfo")
 @Slf4j
-@CrossOrigin(methods = {RequestMethod.OPTIONS,RequestMethod.DELETE,RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT})
+//@CrossOrigin(methods = {RequestMethod.OPTIONS,RequestMethod.DELETE,RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT})
 public class AdminUserInfoController {
     @Resource
     private UserInfoService userInfoService;
