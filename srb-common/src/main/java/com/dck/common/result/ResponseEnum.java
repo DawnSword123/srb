@@ -33,6 +33,9 @@ public enum  ResponseEnum {
     LOGIN_DISABLED_ERROR(-210, "用户已被禁用"),
     LOGIN_AUTH_ERROR(-211, "未登录"),
     USER_BIND_IDCARD_EXIST_ERROR(-301, "身份证号码已绑定"),
+    USER_NO_BIND_ERROR(-302,"用户没有绑定异常"),
+    USER_NO_AMOUNT_ERROR(-303,"用户认证异常"),
+    USER_AMOUNT_LESS_ERROR(-304,"用户借款额度不足")
     ;
 
     // 响应状态码
