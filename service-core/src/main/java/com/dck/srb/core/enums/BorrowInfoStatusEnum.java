@@ -17,4 +17,14 @@ public enum BorrowInfoStatusEnum {
             ;
     private Integer status;
     private String msg;
+
+    public static String getMsgByStatus(Integer status) {
+        BorrowInfoStatusEnum arrObj[] = BorrowInfoStatusEnum.values();
+        for (BorrowInfoStatusEnum obj : arrObj) {
+            if (status == obj.getStatus().intValue()) {
+                return obj.getMsg();
+            }
+        }
+        return "";
+    }
 }

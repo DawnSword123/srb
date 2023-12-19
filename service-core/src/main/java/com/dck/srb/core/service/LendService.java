@@ -1,7 +1,9 @@
 package com.dck.srb.core.service;
 
+import com.dck.srb.core.pojo.entity.BorrowInfo;
 import com.dck.srb.core.pojo.entity.Lend;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.dck.srb.core.pojo.vo.BorrowInfoApprovalVO;
 
 /**
  * <p>
@@ -13,4 +15,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface LendService extends IService<Lend> {
 
+    void createLend(BorrowInfoApprovalVO borrowInfoApprovalVO, BorrowInfo borrowInfo);
 }
