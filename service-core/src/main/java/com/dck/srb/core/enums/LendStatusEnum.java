@@ -20,4 +20,14 @@ public enum LendStatusEnum {
 
     private Integer status;
     private String msg;
+
+    public static String getMsgByStatus(Integer status) {
+        LendStatusEnum[] lendStatusEnums = LendStatusEnum.values();
+        for (LendStatusEnum lendStatusEnum : lendStatusEnums) {
+            if (lendStatusEnum.getStatus() == status) {
+                return lendStatusEnum.msg;
+            }
+        }
+        return "";
+    }
 }
