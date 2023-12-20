@@ -1,7 +1,8 @@
 package com.dck.srb.core.service;
 
-import com.dck.srb.core.pojo.entity.TransFlow;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.dck.srb.core.pojo.bo.TransFlowBO;
+import com.dck.srb.core.pojo.entity.TransFlow;
 
 /**
  * <p>
@@ -13,4 +14,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface TransFlowService extends IService<TransFlow> {
 
+    void saveTransFlow(TransFlowBO transFlowBO);
+
+    boolean isSaveTransFlow(String agentBillNo);
 }

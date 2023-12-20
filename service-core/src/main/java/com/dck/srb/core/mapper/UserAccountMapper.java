@@ -1,7 +1,10 @@
 package com.dck.srb.core.mapper;
 
-import com.dck.srb.core.pojo.entity.UserAccount;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.dck.srb.core.pojo.entity.UserAccount;
+import org.apache.ibatis.annotations.Param;
+
+import java.math.BigDecimal;
 
 /**
  * <p>
@@ -13,4 +16,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface UserAccountMapper extends BaseMapper<UserAccount> {
 
+    void updateAccount(@Param("bindCode")String bindCode,
+                       @Param("amount")BigDecimal amount,
+                       @Param("freezeAmount")BigDecimal freezeAmount);
 }

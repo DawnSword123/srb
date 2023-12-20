@@ -1,7 +1,10 @@
 package com.dck.srb.core.service;
 
-import com.dck.srb.core.pojo.entity.UserAccount;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.dck.srb.core.pojo.entity.UserAccount;
+
+import java.math.BigDecimal;
+import java.util.Map;
 
 /**
  * <p>
@@ -13,4 +16,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface UserAccountService extends IService<UserAccount> {
 
+    String commitCharge(BigDecimal chargeAmt, Long userId);
+
+    String notify(Map<String, Object> paramMap);
+
+    BigDecimal getAccount(Long userId);
 }
