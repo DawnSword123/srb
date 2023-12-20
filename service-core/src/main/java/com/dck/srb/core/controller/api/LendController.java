@@ -67,6 +67,7 @@ public class LendController {
             @PathVariable("returnMethod")Integer returnMethod) {
 
         BigDecimal  interestCount = lendService.getInterestCount(invest, yearRate, totalmonth, returnMethod);
+        log.info("计算投资收益,{}",interestCount.intValue());
         return Result.ok().data("interestCount", interestCount);
     }
 }

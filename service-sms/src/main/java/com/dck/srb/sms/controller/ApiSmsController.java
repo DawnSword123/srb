@@ -7,13 +7,15 @@ import com.dck.common.util.RandomUtils;
 import com.dck.common.util.RegexValidateUtils;
 import com.dck.srb.sms.client.CoreUserInfoClient;
 import com.dck.srb.sms.service.SmsService;
-import com.dck.srb.sms.util.SmsProperties;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -63,8 +65,9 @@ public class ApiSmsController {
         Map<String,Object> param = new HashMap<>();
         param.put("code", code);
         //发送短信
-        smsService.send(mobile, SmsProperties.TEMPLATE_CODE, param);
+//        smsService.send(mobile, SmsProperties.TEMPLATE_CODE, param);
 
+        log.info("srb:sms:code:{},{}",mobile,code);
         //将验证码存入redis
         redisTemplate.opsForValue().set("srb:sms:code:" + mobile, code, 5, TimeUnit.MINUTES);
 

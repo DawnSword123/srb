@@ -35,7 +35,10 @@ public enum  ResponseEnum {
     USER_BIND_IDCARD_EXIST_ERROR(-301, "身份证号码已绑定"),
     USER_NO_BIND_ERROR(-302,"用户没有绑定异常"),
     USER_NO_AMOUNT_ERROR(-303,"用户认证异常"),
-    USER_AMOUNT_LESS_ERROR(-304,"用户借款额度不足")
+    USER_AMOUNT_LESS_ERROR(-304,"用户借款额度不足"),
+    LEND_INVEST_ERROR(-305,"标的状态必须为募资中"),
+    LEND_FULL_SCALE_ERROR(-306,"标不可超卖"),
+    NOT_SUFFICIENT_FUNDS_ERROR(-307,"当前用户的余额 >= 当前用户的投资金额"),
     ;
 
     // 响应状态码
