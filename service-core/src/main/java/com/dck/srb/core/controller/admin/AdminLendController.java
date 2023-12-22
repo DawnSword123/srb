@@ -43,4 +43,13 @@ public class AdminLendController {
         Map<String, Object> result = lendService.getLendDetail(id);
         return Result.ok().data("lendDetail", result);
     }
+
+    @ApiOperation("放款")
+    @GetMapping("/makeLoan/{id}")
+    public Result makeLoan(
+            @ApiParam(value = "标的id", required = true)
+            @PathVariable Long id) {
+        lendService.makeLoan(id);
+        return Result.ok().data("", null);
+    }
 }

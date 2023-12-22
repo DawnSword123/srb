@@ -39,6 +39,7 @@ public enum  ResponseEnum {
     LEND_INVEST_ERROR(-305,"标的状态必须为募资中"),
     LEND_FULL_SCALE_ERROR(-306,"标不可超卖"),
     NOT_SUFFICIENT_FUNDS_ERROR(-307,"当前用户的余额 >= 当前用户的投资金额"),
+    NOT_LEND_ERROR(-308,"当前标不存在"),
     ;
 
     // 响应状态码
