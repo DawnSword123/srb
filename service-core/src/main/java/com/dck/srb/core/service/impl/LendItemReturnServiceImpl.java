@@ -1,10 +1,13 @@
 package com.dck.srb.core.service.impl;
 
-import com.dck.srb.core.pojo.entity.LendItemReturn;
-import com.dck.srb.core.mapper.LendItemReturnMapper;
-import com.dck.srb.core.service.LendItemReturnService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.dck.srb.core.mapper.LendItemReturnMapper;
+import com.dck.srb.core.pojo.entity.LendItemReturn;
+import com.dck.srb.core.service.LendItemReturnService;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -17,4 +20,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class LendItemReturnServiceImpl extends ServiceImpl<LendItemReturnMapper, LendItemReturn> implements LendItemReturnService {
 
+    @Override
+    public List<LendItemReturn> selectByLendId(Long lendId, Long userId) {
+        QueryWrapper<LendItemReturn> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("lend_id", lendId);
+        queryWrapper.eq("invest_user_id", userId)
+                .orderByAsc("current_period");
+        List<LendItemReturn> lendItemReturns = baseMapper.selectList(queryWrapper);
+        return lendItemReturns;
+    }
 }
