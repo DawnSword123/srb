@@ -1,4 +1,4 @@
-package com.dck.srb.core.controller;
+package com.dck.srb.core.controller.api;
 
 
 import com.dck.common.exception.Assert;
@@ -8,6 +8,7 @@ import com.dck.common.util.RegexValidateUtils;
 import com.dck.srb.base.util.JwtUtils;
 import com.dck.srb.core.pojo.vo.LoginVO;
 import com.dck.srb.core.pojo.vo.RegisterVO;
+import com.dck.srb.core.pojo.vo.UserIndexVO;
 import com.dck.srb.core.pojo.vo.UserInfoVO;
 import com.dck.srb.core.service.UserInfoService;
 import io.swagger.annotations.Api;
@@ -100,6 +101,15 @@ public class UserInfoController {
     @GetMapping("/checkMobile/{mobile}")
     public boolean checkMobile(@PathVariable String mobile){
         return userInfoService.checkMobile(mobile);
+    }
+
+    @ApiOperation("获取个人空间用户信息")
+    @GetMapping("/auth/getIndexUserInfo")
+    public Result getIndexUserInfo(HttpServletRequest request) {
+        String token = request.getHeader("token");
+        Long userId = JwtUtils.getUserId(token);
+        UserIndexVO userIndexVO = userInfoService.getIndexUserInfo(userId);
+        return Result.ok().data("userIndexVO", userIndexVO);
     }
 }
 
